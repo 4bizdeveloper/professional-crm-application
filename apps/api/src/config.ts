@@ -1,0 +1,1 @@
+import "dotenv/config"; import {z} from "zod"; const s=z.object({PORT:z.coerce.number().default(4000),MONGODB_URI:z.string().min(1),JWT_SECRET:z.string().min(32),CLIENT_URL:z.string().default("http://localhost:5173")}); export const env=s.parse(process.env);
